@@ -1,0 +1,35 @@
+from time import sleep
+from math import trunc
+print('=-=' * 20)
+print(f'{'RABOBANK: BANCO INTERNACIONAL':>45}')
+print('=-=' * 20)
+print('')
+print('FINANCIAMENTO')
+emp = int(input('Digite o valor de empréstimo desejado: R$ '))
+sal = int(input('Digite o seu salário para cálculo: R$ '))
+ano = int(input('Digite o  total de anos de financiamento: '))
+parc = (emp / (ano * 12))
+print('=-=' * 15)
+print(f'{'Por favor... aguarde...':>35}')
+print('=-=' * 15)
+sleep(2)
+if parc >= sal * 0.3:
+    print('')
+    print('Desculpe! Infelizmente, o valor da parcela ultrapassa o limite de 30% do seu salário, não sendo possível realizar a operação.')
+else:
+    print(f'O valor da parcela é de: R$ {parc:.3f}')
+    r = input('Quer realizar o empréstimo? [s/n] ')
+    if r == 's':
+        print('=-=' * 15)
+        print(f'{'Por favor... aguarde...':>35}')
+        print('=-=' * 15)
+        sleep(2)
+        print(f'{'OPERAÇÃO REALIZADA!':>30}')
+        print('=-=' * 15)
+        print('O valor do empréstimo é: R$', emp)
+        print('O número de parcelas é: ', ano * 12, 'meses')
+        print(f'O valor das parcelas é de: R$ {parc:.2f}')
+    else:
+        print('Operação cancelada!')
+print("")
+print('Tenha um ótimo dia!')
